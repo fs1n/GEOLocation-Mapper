@@ -1,6 +1,6 @@
 # GEOLocation-Mapper
 
-# **Disclaimer**
+# ‼️Disclaimer‼️
 This tool is intended solely for educational and research purposes. The creator assumes no responsibility for any illegal or unethical activities that may result from its use. Users are responsible for ensuring compliance with all relevant laws and regulations in their jurisdiction.
 
 ## The Idea:
