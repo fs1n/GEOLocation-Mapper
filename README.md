@@ -9,4 +9,3 @@ I came up with this when I was trying to get a map of the GPS data I was collect
 ## Current Goals🔥🚀
 - [ ] Be Able to Import Data into a Database
 - [ ] Simple Preview of data on OpenStreetmap or similar (Interactive)
-- [ ] 
