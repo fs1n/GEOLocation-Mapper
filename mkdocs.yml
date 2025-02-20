@@ -1,0 +1,6 @@
+site_name: GEOLocation Mapper Documentation
+site_description: GEOLocation-Mapper is a tool designed to visualize GPS data by creating a heat map of clusters of people, similar to the Snap Map.
+site_author: © 2025 Frederik Sinniger
+nav:
+  - Home: index.md
+theme: readthedocs
