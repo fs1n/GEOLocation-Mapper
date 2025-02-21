@@ -172,3 +172,7 @@ cython_debug/
 
 # Mac OS X Finder directory files
 .DS_Store
+
+# MKDocs documentation
+/geolocation
+mkdocs.yml
