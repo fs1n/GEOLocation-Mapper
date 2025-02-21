@@ -175,4 +175,5 @@ cython_debug/
 
 # MKDocs documentation
 /geolocation
+/docs
 mkdocs.yml
