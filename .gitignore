@@ -173,7 +173,8 @@ cython_debug/
 # Mac OS X Finder directory files
 .DS_Store
 
-# MKDocs documentation
-/geolocation
-/docs
-mkdocs.yml
+# Cheatsheet file
+cheatsheet.md
+
+# Dummy Data for testing
+GPX-Dumy-Data.gpx
