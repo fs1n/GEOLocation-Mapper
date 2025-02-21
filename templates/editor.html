@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manual Map Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <style>
+        #map { height: 600px; width: 100%; }
+        .toolbar { margin: 10px 0; padding: 10px; background: #f0f0f0; }
+        .datetime-picker { margin: 10px 0; }
+        .overwrite-check { margin-left: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Manual Map Editor</h1>
+    <div class="toolbar">
+        <button onclick="saveData()">Save Markers</button>
+        <button onclick="clearMarkers()">Clear All</button>
+        <label class="overwrite-check">
+            <input type="checkbox" id="overwrite"> Overwrite Existing Data
+        </label>
+    </div>
+    <div class="datetime-picker">
+        <input type="datetime-local" id="timestamp" required>
+        <button onclick="enablePlacement()">Set Timestamp</button>
+    </div>
+    <div id="map"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script>
+        let markers = [];
+        let currentTimestamp = null;
+        const map = L.map('map').setView([37.7749, -122.4194], 13);
+
+        // Base layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        function enablePlacement() {
+            const timestampInput = document.getElementById('timestamp');
+            if (!timestampInput.value) {
+                alert('Please select a timestamp first!');
+                return;
+            }
+            currentTimestamp = timestampInput.value + ':00Z';
+            map.once('click', placeMarker);
+        }
+
+        function placeMarker(e) {
+            const marker = L.marker(e.latlng, {
+                draggable: true
+            }).addTo(map);
+            
+            marker.data = {
+                lat: e.latlng.lat,
+                lng: e.latlng.lng,
+                timestamp: currentTimestamp
+            };
+            
+            marker.bindPopup(`
+                <b>Timestamp:</b> ${currentTimestamp}<br>
+                <b>Coordinates:</b> ${e.latlng.lat.toFixed(4)}, ${e.latlng.lng.toFixed(4)}
+            `).openPopup();
+
+            marker.on('dragend', function(e) {
+                marker.data.lat = e.target.getLatLng().lat;
+                marker.data.lng = e.target.getLatLng().lng;
+            });
+
+            markers.push(marker);
+            document.getElementById('timestamp').value = '';
+            currentTimestamp = null;
+        }
+
+        function saveData() {
+            const overwrite = document.getElementById('overwrite').checked;
+            const data = {
+                points: markers.map(marker => marker.data),
+                overwrite: overwrite
+            };
+
+            fetch('/save_manual_data', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            }).then(response => {
+                if (response.ok) window.location.href = '/';
+            });
+        }
+
+        function clearMarkers() {
+            markers.forEach(marker => map.removeLayer(marker));
+            markers = [];
+        }
+    </script>
+</body>
+</html>

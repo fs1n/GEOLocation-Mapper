@@ -146,6 +146,10 @@ venv.bak/
 # mkdocs documentation
 /site
 
+# MKDocs Configuration & /docs/assets Folder
+docs/assets/
+mkdocs.yml
+
 # mypy
 .mypy_cache/
 .dmypy.json

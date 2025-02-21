@@ -1,33 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>GEOLocation-Mapper</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPS Data Map</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
     <style>
         #map { height: 600px; }
     </style>
 </head>
 <body>
-    <div id="map"></div>
-    <script>
-        var map = L.map('map').setView([0, 0], 2);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
-
-        var gpsData = {{ gps_data | tojson }};
-        gpsData.forEach(function(point) {
-            L.circleMarker([point.latitude, point.longitude], {
-                radius: 5,
-                fillColor: "#ff7800",
-                color: "#000",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8
-            }).addTo(map);
-        });
-    </script>
+    <h1>GPS Data Map</h1>
+    <div id="map">
+        {{ map_html | safe }}
+    </div>
 </body>
 </html>
