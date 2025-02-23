@@ -9,8 +9,6 @@
 ## ⚠️ Disclaimer  
 This tool is designed for **educational and research purposes only**. The creator assumes no responsibility for any **illegal or unethical** activities. Users must **comply with all relevant laws and regulations** in their jurisdiction.  
 
-Here’s a professional and engaging **About the Project** text for your GitHub page:
-
 ---
 
 ### About the Project
