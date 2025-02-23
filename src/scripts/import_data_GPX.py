@@ -1,3 +1,32 @@
+"""
+Author: Frederik Sinniger
+Date Created: 23.02.2025
+Version: 0.0.1
+
+Description:
+    Data Import Script for GPX files.
+    This script imports GPS data from one or more GPX files into a PostgreSQL database.
+    The script can be run from the command line with the following options:
+    - Specify one or more GPX files to import.
+    - Specify a folder containing GPX files to import all files in the folder and its subfolders.
+    - Use the --override flag to delete existing data in the database before import.
+    - Use the --dry-run flag to simulate the import without making changes to the database.
+    - Use the --verbose flag to display detailed progress and debugging information.
+    - Use the --help flag to display usage instructions.
+
+Dependencies:
+    - gpxpy:
+        pip install gpxpy
+    - tqdm:
+        pip install tqdm
+    - SQLAlchemy:
+        pip install sqlalchemy
+
+Docs:
+    - GPX file format: https://www.topografix.com/gpx.asp
+    - gpxpy documentation:
+"""
+
 import gpxpy
 import gpxpy.gpx
 from sqlalchemy import create_engine, text
