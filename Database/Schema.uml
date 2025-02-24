@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>79884f0f-4251-4351-8597-328453363b32.SCHEMA:postgres.public</OriginalElement>
+  <nodes>
+    <node x="988.5" y="312.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.country</node>
+    <node x="162.0" y="312.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.habittype</node>
+    <node x="585.0" y="656.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.foodpreference</node>
+    <node x="468.5" y="916.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.device</node>
+    <node x="754.0" y="-128.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.gender</node>
+    <node x="825.0" y="644.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.routine</node>
+    <node x="64.5" y="632.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.workhistory</node>
+    <node x="726.5" y="904.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.socialmedia</node>
+    <node x="870.5" y="92.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.relationshiptype</node>
+    <node x="755.0" y="228.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.profile</node>
+    <node x="642.0" y="92.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.routinetype</node>
+    <node x="-105.0" y="288.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.event</node>
+    <node x="990.5" y="892.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.relationship</node>
+    <node x="3.5" y="68.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.employer</node>
+    <node x="-101.5" y="916.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.eventparticipation</node>
+    <node x="206.5" y="904.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.habitlog</node>
+    <node x="349.5" y="608.0">79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.address</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.workhistory" target="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.profile" relationship="REFERENCES">
+      <point x="41.75" y="-104.0" />
+      <point x="189.75" y="576.0" />
+      <point x="688.0" y="576.0" />
+      <point x="688.0" y="516.0" />
+      <point x="786.0" y="516.0" />
+      <point x="-62.0" y="128.0" />
+    </edge>
+    <edge source="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.routine" target="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.routinetype" relationship="REFERENCES">
+      <point x="41.5" y="-92.0" />
+      <point x="949.5" y="556.0" />
+      <point x="728.0" y="556.0" />
+      <point x="0.0" y="44.0" />
+    </edge>
+    <edge source="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.eventparticipation" target="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.profile" relationship="REFERENCES">
+      <point x="44.75" y="-80.0" />
+      <point x="32.75" y="576.0" />
+      <point x="688.0" y="576.0" />
+      <point x="688.0" y="516.0" />
+      <point x="786.0" y="516.0" />
+      <point x="-62.0" y="128.0" />
+    </edge>
+    <edge source="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.address" target="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.profile" relationship="REFERENCES">
+      <point x="0.0" y="-128.0" />
+      <point x="448.0" y="576.0" />
+      <point x="688.0" y="576.0" />
+      <point x="688.0" y="516.0" />
+      <point x="786.0" y="516.0" />
+      <point x="-62.0" y="128.0" />
+    </edge>
+    <edge source="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.foodpreference" target="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.profile" relationship="REFERENCES">
+      <point x="0.0" y="-80.0" />
+      <point x="688.0" y="516.0" />
+      <point x="786.0" y="516.0" />
+      <point x="-62.0" y="128.0" />
+    </edge>
+    <edge source="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.habitlog" target="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.habittype" relationship="REFERENCES">
+      <point x="-40.75" y="-92.0" />
+      <point x="247.25" y="556.0" />
+      <point x="248.0" y="556.0" />
+      <point x="0.0" y="44.0" />
+    </edge>
+    <edge source="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.habitlog" target="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.profile" relationship="REFERENCES">
+      <point x="40.75" y="-92.0" />
+      <point x="328.75" y="576.0" />
+      <point x="688.0" y="576.0" />
+      <point x="688.0" y="516.0" />
+      <point x="786.0" y="516.0" />
+      <point x="-62.0" y="128.0" />
+    </edge>
+    <edge source="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.relationship" target="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.relationshiptype" relationship="REFERENCES">
+      <point x="65.0" y="-104.0" />
+      <point x="1153.0" y="416.0" />
+      <point x="968.0" y="416.0" />
+      <point x="0.0" y="44.0" />
+    </edge>
+    <edge source="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.routine" target="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.profile" relationship="REFERENCES">
+      <point x="-41.5" y="-92.0" />
+      <point x="866.5" y="576.0" />
+      <point x="688.0" y="576.0" />
+      <point x="688.0" y="516.0" />
+      <point x="786.0" y="516.0" />
+      <point x="-62.0" y="128.0" />
+    </edge>
+    <edge source="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.device" target="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.profile" relationship="REFERENCES">
+      <point x="0.0" y="-80.0" />
+      <point x="568.0" y="576.0" />
+      <point x="688.0" y="576.0" />
+      <point x="688.0" y="516.0" />
+      <point x="786.0" y="516.0" />
+      <point x="-62.0" y="128.0" />
+    </edge>
+    <edge source="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.profile" target="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.gender" relationship="REFERENCES">
+      <point x="0.0" y="-128.0" />
+      <point x="0.0" y="44.0" />
+    </edge>
+    <edge source="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.eventparticipation" target="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.event" relationship="REFERENCES">
+      <point x="-44.75" y="-80.0" />
+      <point x="-56.75" y="896.0" />
+      <point x="-12.0" y="896.0" />
+      <point x="0.0" y="68.0" />
+    </edge>
+    <edge source="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.workhistory" target="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.employer" relationship="REFERENCES">
+      <point x="-41.75" y="-104.0" />
+      <point x="106.25" y="556.0" />
+      <point x="108.0" y="556.0" />
+      <point x="0.0" y="68.0" />
+    </edge>
+    <edge source="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.relationship" target="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.profile" relationship="REFERENCES">
+      <point x="-65.0" y="-104.0" />
+      <point x="1023.0" y="536.0" />
+      <point x="848.0" y="536.0" />
+      <point x="0.0" y="128.0" />
+    </edge>
+    <edge source="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.socialmedia" target="79884f0f-4251-4351-8597-328453363b32.TABLE:postgres.public.profile" relationship="REFERENCES">
+      <point x="0.0" y="-92.0" />
+      <point x="808.0" y="576.0" />
+      <point x="688.0" y="576.0" />
+      <point x="688.0" y="516.0" />
+      <point x="786.0" y="516.0" />
+      <point x="-62.0" y="128.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.5714378837885029" showDependencies="false" x="700.2729303904241" y="645.8579390263496" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
