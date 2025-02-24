@@ -1,4 +1,5 @@
--- CREATE EXTENSION IF NOT EXISTS postgis;
+-- PostGIS extension is required for geolocation data Schema wont work without it
+CREATE EXTENSION IF NOT EXISTS postgis;
 
 -- Lookup Tables
 CREATE TABLE Gender (
