@@ -1,8 +1,10 @@
 import json
+from pathlib import Path
 from dataclasses import dataclass
 
 def get_templates_from_json(filename: str) -> dict:
-    with open(filename, 'r') as f:
+    path = Path(__file__).resolve().parent / filename
+    with open(path, 'r') as f:
         return json.load(f)
 
 @dataclass

@@ -16,13 +16,15 @@ class MapUtil:
         if not gps_data:
             return None
 
-        # Create a Folium map centered on the first GPS point
-        map_center = [gps_data[0][0], gps_data[0][1]]
+        # Support both tuple rows and GeoPoint objects
+        first = gps_data[0]
+        if hasattr(first, "latitude"):
+            map_center = [first.latitude, first.longitude]
+            coordinates = [(p.latitude, p.longitude) for p in gps_data]
+        else:
+            map_center = [first[0], first[1]]
+            coordinates = [(p[0], p[1]) for p in gps_data]
         folium_map = folium.Map(location=map_center, zoom_start=13, tiles="OpenStreetMap")
-
-        # Extract coordinates and timestamps
-        coordinates = [(point[0], point[1]) for point in gps_data]
-        timestamps = [point[3] for point in gps_data]
 
         # Create a PolyLine
         line = folium.PolyLine(

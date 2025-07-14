@@ -1,6 +1,6 @@
-from datastore import Datastore, PostgresBackend, SQLiteBackend
-from webservice import WebService
-from map import MapUtil
+from .datastore import Datastore, PostgresBackend, SQLiteBackend
+from .webservice import WebService
+from .map import MapUtil
 import logging
 import sys
 import signal
