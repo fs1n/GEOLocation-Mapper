@@ -6,13 +6,14 @@ try:
     from sqlalchemy import create_engine, text, Result
     from sqlalchemy.orm import scoped_session, sessionmaker
 except ImportError:
-    import sqlite3
+    pass
+import sqlite3
 
 from typing import Sequence, Any, Union
 import logging
 import threading
 import queue
-from util import GeoPoint
+from .util import GeoPoint
 
 class StorageBackend(ABC):
     """Interface to database"""

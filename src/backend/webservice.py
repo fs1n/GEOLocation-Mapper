@@ -15,9 +15,9 @@ Docs:
 
 """
 from flask import Flask, render_template, request, jsonify
-from datastore import Datastore
-from map import MapUtil
-from util import get_templates_from_json, GeoPoint
+from .datastore import Datastore
+from .map import MapUtil
+from .util import get_templates_from_json, GeoPoint
 import logging
 
 class WebService:
